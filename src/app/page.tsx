@@ -1,4 +1,4 @@
-export default function Home() {
+const  Home = () =>{
   return (
     <>
       <main className="flex flex-col items-center justify-between p-5">
@@ -9,3 +9,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home
