@@ -113,7 +113,6 @@ body {
     );
   background-repeat: no-repeat;
   background-size: auto 287px, cover, cover;
-  min-height: 642px;
 }
 
 .about-section {
@@ -153,7 +152,11 @@ body {
 }
 
 .services-list {
-  @apply text-xl font-extralight leading-[17px] uppercase;
+  @apply text-xl font-extralight leading-[17px] uppercase xl:leading-[26px]
+}
+
+.services-list li {
+  cursor: pointer;
 }
 
 .services-item__active {

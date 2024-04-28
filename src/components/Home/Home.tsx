@@ -3,6 +3,7 @@ import About from "../About/About";
 import Career from "../Career/Career";
 import Contacts from "../Contacts/Contacts";
 import Hero from "../Hero/Hero";
+import Services from "../Services/Services";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,11 +14,11 @@ const Home = () => {
   return (
     <main className={`${inter.className} absolute top-0 left-0 right-0`}>
       <Hero />
-      <About/>
-      {/* <Services/> */}
-      <Career/>
+      <About />
+      <Services />
+      <Career />
       {/* <Gallery/> */}
-      <Contacts/>
+      <Contacts />
     </main>
   );
 };

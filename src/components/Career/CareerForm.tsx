@@ -1,7 +1,6 @@
 'use client';
 import {FC, ReactNode} from 'react';
-import { useForm } from 'react-hook-form';
-
+import {useForm} from 'react-hook-form';
 
 export const CareerForm = () => {
   const {
@@ -15,18 +14,20 @@ export const CareerForm = () => {
   };
 
   const phonePattern =
-    /^(\+[0-9]{2}\s\([0-9]{3}\)\s[0-9]{2}\s[0-9]{2}\s[0-9]{3})$/;
+  /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$)/;
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-     >
-      <div >
-        <label  htmlFor="fullName">
+      className="max-w-md mx-auto col-span-3 md:col-span-1 ">
+      <div className="mt-4">
+        <label className="block form-label mb-2" htmlFor="fullName">
           Full name
         </label>
         <input
-          
+          className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
+            errors.fullName ? 'border-red-500' : 'border-transparent'
+          }`}
           type="text"
           placeholder="John Smith"
           {...register('fullName', {
@@ -34,34 +35,38 @@ export const CareerForm = () => {
           })}
         />
         {errors.fullName && (
-          <p >
+          <p className="text-red-500 text-xs italic">
             Full name required
           </p>
         )}
       </div>
 
-      <div >
-        <label  htmlFor="email">
+      <div className="mt-4">
+        <label className="block form-label mb-2" htmlFor="email">
           E-mail
         </label>
         <input
-          
+          className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
+            errors.fullName ? 'border-red-500' : 'border-transparent'
+          }`}
           type="text"
           placeholder="johnsmith@email.com"
           {...register('email', {required: 'Email is required'})}
         />
         {errors.email && (
-          <p >
+          <p className="text-red-500 text-xs italic">
             Email required
           </p>
         )}
       </div>
-      <div >
-        <label  htmlFor="position">
+      <div className="mt-4">
+        <label className="block form-label mb-2" htmlFor="position">
           Position
         </label>
         <input
-          
+          className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
+            errors.fullName ? 'border-red-500' : 'border-transparent'
+          }`}
           type="text"
           placeholder="Movie maker"
           {...register('position', {
@@ -69,17 +74,19 @@ export const CareerForm = () => {
           })}
         />
         {errors.position && (
-          <p >
+          <p className="text-red-500 text-xs italic">
             Position required
           </p>
         )}
       </div>
-      <div >
-        <label  htmlFor="phone">
+      <div className="mt-4">
+        <label className="block form-label mb-2" htmlFor="phone">
           Phone
         </label>
         <input
-          
+          className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
+            errors.phone ? 'border-red-500' : 'border-transparent'
+          }`}
           type="text"
           placeholder="+ 38 (097) 12 34 567"
           {...register('phone', {
@@ -91,30 +98,30 @@ export const CareerForm = () => {
           })}
         />
         {errors.phone && (
-          <p >
+          <p className="text-red-500 text-xs italic">
             {errors.phone.message as ReactNode}
           </p>
         )}
       </div>
-      <div >
-        <label  htmlFor="message">
+      <div className="mt-4">
+        <label className="block form-label mb-2" htmlFor="message">
           Message
         </label>
-        <textarea />
+        <textarea className="h-[196px] resize-none bg-form-input w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline " />
       </div>
 
-      <div >
-        <label>
+      <div className="mb-4">
+        <label className="block text-sm ">
           <input
             type="checkbox"
             {...register('agreement', {
               required: 'You must accept the agreement',
             })}
-          />
+          />{' '}
           I confirm my consent to the processing of personal data.
         </label>
         {errors.agreement && (
-          <p >
+          <p className="text-red-500 text-xs italic">
             You must confirm the consent
           </p>
         )}
@@ -122,7 +129,7 @@ export const CareerForm = () => {
 
       <button
         type="submit"
-        >
+        className=" text-white text-center uppercase text-3xl font-medium leading-[normal] focus:outline-none focus:shadow-outline block ml-auto">
         Send
       </button>
     </form>
