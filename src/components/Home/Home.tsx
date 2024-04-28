@@ -4,6 +4,7 @@ import Career from "../Career/Career";
 import Contacts from "../Contacts/Contacts";
 import Hero from "../Hero/Hero";
 import Services from "../Services/Services";
+import Gallery from "../Gallery/Gallery";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ const Home = () => {
       <About />
       <Services />
       <Career />
-      {/* <Gallery/> */}
+      <Gallery/>
       <Contacts />
     </main>
   );
