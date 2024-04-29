@@ -14,7 +14,8 @@ theme: {
         'dark-color': '#0F1812',
         'white-color': '#FFFFFF',
         'white-transparent': 'rgba(255, 255, 255, 0.20)',
-        'form-input': 'rgba(255, 255, 255, 0.05)'
+        'form-input': 'rgba(255, 255, 255, 0.05)',
+        'red-color': 'rgba(255, 87, 87, 1)'
       },
       screens: {
         xs: '320px',

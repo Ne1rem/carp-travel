@@ -36,7 +36,7 @@ export const CareerForm = () => {
               })}
             />
             {errors.fullName && (
-              <p className="text-red-500 text-xs italic">Full name required</p>
+              <p className="text-red-color text-xs italic">Full name required</p>
             )}
           </div>
           <div className="mt-4">
@@ -45,14 +45,20 @@ export const CareerForm = () => {
             </label>
             <input
               className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
-                errors.fullName ? "border-red-500" : "border-transparent"
+                errors.email ? "border-red-500" : "border-transparent"
               }`}
               type="text"
               placeholder="johnsmith@email.com"
-              {...register("email", { required: "Email is required" })}
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z|a-z]{2,}$/i,
+                  message: "Invalid email address",
+                },
+              })}
             />
             {errors.email && (
-              <p className="text-red-500 text-xs italic">Email required</p>
+              <p className="text-red-color text-xs italic">Email required</p>
             )}
           </div>
           <div className="mt-4">
@@ -70,7 +76,7 @@ export const CareerForm = () => {
               })}
             />
             {errors.position && (
-              <p className="text-red-500 text-xs italic">Position required</p>
+              <p className="text-red-color text-xs italic">Position required</p>
             )}
           </div>
           <div className="mt-4">
@@ -92,7 +98,7 @@ export const CareerForm = () => {
               })}
             />
             {errors.phone && (
-              <p className="text-red-500 text-xs italic">
+              <p className="text-red-color text-xs italic">
                 {errors.phone.message as ReactNode}
               </p>
             )}
@@ -108,7 +114,7 @@ export const CareerForm = () => {
               className="h-[196px] resize-none bg-form-input w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             />
             {errors.message && (
-              <p className="text-red-500 text-xs italic">Message required</p>
+              <p className="text-red-color text-xs italic">Message required</p>
             )}
           </div>
 
@@ -123,7 +129,7 @@ export const CareerForm = () => {
               I confirm my consent to the processing of personal data.
             </label>
             {errors.agreement && (
-              <p className="text-red-500 text-xs italic">
+              <p className="text-red-color text-xs italic">
                 You must confirm the consent
               </p>
             )}

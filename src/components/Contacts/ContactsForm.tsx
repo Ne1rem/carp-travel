@@ -12,16 +12,16 @@ export const ContactsForm = () => {
     console.log(data);
   };
 
-  const phonePattern = /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$)/;
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-md mx-auto col-span-3 md:col-span-4 md:flex md:max-w-full"
+      className="w-full mx-auto col-span-3 md:col-span-4 md:flex
+      md:col-start-1 md:col-end-5 md:row-start-4 md:row-end-5
+      xl:md:col-start-2 xl:col-end-3 xl:row-start-2 xl:row-end-5 "
     >
-      <div className="md:flex md:gap-[24px]">
-        <div className="w-full">
-          <div className="mt-4">
+      <div className="md:w-full md:flex md:gap-[24px] xl:flex-col">
+        <div className="w-full xl:flex xl:gap-7">
+          <div className="mt-4 xl:w-full">
             <label className="block form-label mb-2" htmlFor="fullName">
               Full name
             </label>
@@ -36,31 +36,37 @@ export const ContactsForm = () => {
               })}
             />
             {errors.fullName && (
-              <p className="text-red-500 text-xs italic  text-right">
+              <p className="text-red-color text-xs italic  text-right">
                 X Incorrect name
               </p>
             )}
           </div>
-          <div className="mt-4">
+          <div className="mt-4 xl:w-full">
             <label className="block form-label mb-2" htmlFor="email">
               E-mail
             </label>
             <input
               className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
-                errors.fullName ? "border-red-500" : "border-transparent"
+                errors.email ? "border-red-500" : "border-transparent"
               }`}
               type="text"
               placeholder="johnsmith@email.com"
-              {...register("email", { required: "Email is required" })}
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z|a-z]{2,}$/i,
+                  message: "Invalid email address",
+                },
+              })}
             />
             {errors.email && (
-              <p className="text-red-500 text-xs italic text-right">
+              <p className="text-red-color text-xs italic text-right">
                 X Invalid email
               </p>
             )}
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-full md:min-w-[463px]">
           <div className="mt-4">
             <label className="block form-label mb-2" htmlFor="message">
               Message
@@ -70,12 +76,14 @@ export const ContactsForm = () => {
               className="h-[196px] resize-none bg-form-input w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             />
             {errors.message && (
-              <p className="text-red-500 text-xs italic text-right">Message required</p>
+              <p className="text-red-color text-xs italic text-right">
+                Message required
+              </p>
             )}
           </div>
           <button
             type="submit"
-            className=" text-white text-center uppercase text-3xl font-medium leading-[normal] focus:outline-none focus:shadow-outline block ml-auto"
+            className=" text-white text-center uppercase text-3xl font-medium leading-[normal] focus:outline-none focus:shadow-outline block ml-auto pt-4"
           >
             Send
           </button>

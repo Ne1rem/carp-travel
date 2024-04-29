@@ -51,6 +51,10 @@ body {
   @apply text-sm not-italic font-normal leading-5 md:text-[16px] xl:text-[18px] xl:leading-6;
 }
 
+.header-5 {
+  @apply text-sm not-italic font-normal leading-6 md:text-[16px] xl:text-[18px] xl:leading-6;
+}
+
 .text-style {
   @apply text-sm font-extralight   leading-5 text-justify;
 }
