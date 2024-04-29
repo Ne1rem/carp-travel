@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import { gallery } from '@/jsonData/gallery';
 
-
 const Gallery: FC = () => {
   return (
     <section id="career" className="career-section">
@@ -37,7 +36,7 @@ const Gallery: FC = () => {
               nextEl: '.swiper-button-next',
             }}
             className="w-full h-[213px] sm:h-[370px] xl:h-[429px] mb-[12px] md:mb-0">
-            {gallery.map((item) => (
+            {gallery    .map((item) => (
               <SwiperSlide key={item.title}>
                 <div className="swiper-slide-inner">
                   <Image

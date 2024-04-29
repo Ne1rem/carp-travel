@@ -288,3 +288,20 @@ body {
 .form-label {
   @apply text-xs font-extralight leading-6 tracking-[2.4px];
 }
+
+.footer-section {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 24, 38, 0.75),
+      rgba(0, 37, 49, 0) 100%
+    ),
+    linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    image-set(
+      url(/images/background-footer-mob.webp) type('image/webp') 1x,
+      url(/images/background-footer@2x.webp) type('image/webp') 2x,
+      url(/images/background-footer-mob.jpg) 1x,
+      url(/images/background-footer@2x.jpg) 2x
+    );
+  background-repeat: no-repeat;
+  background-size: auto 287px, cover, cover;
+}

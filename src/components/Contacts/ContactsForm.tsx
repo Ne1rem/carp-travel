@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
 
-export const CareerForm = () => {
+export const ContactsForm = () => {
   const {
     register,
     handleSubmit,
@@ -36,7 +36,9 @@ export const CareerForm = () => {
               })}
             />
             {errors.fullName && (
-              <p className="text-red-500 text-xs italic">Full name required</p>
+              <p className="text-red-500 text-xs italic  text-right">
+                X Incorrect name
+              </p>
             )}
           </div>
           <div className="mt-4">
@@ -52,48 +54,8 @@ export const CareerForm = () => {
               {...register("email", { required: "Email is required" })}
             />
             {errors.email && (
-              <p className="text-red-500 text-xs italic">Email required</p>
-            )}
-          </div>
-          <div className="mt-4">
-            <label className="block form-label mb-2" htmlFor="position">
-              Position
-            </label>
-            <input
-              className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
-                errors.fullName ? "border-red-500" : "border-transparent"
-              }`}
-              type="text"
-              placeholder="Movie maker"
-              {...register("position", {
-                required: "Position is required",
-              })}
-            />
-            {errors.position && (
-              <p className="text-red-500 text-xs italic">Position required</p>
-            )}
-          </div>
-          <div className="mt-4">
-            <label className="block form-label mb-2" htmlFor="phone">
-              Phone
-            </label>
-            <input
-              className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
-                errors.phone ? "border-red-500" : "border-transparent"
-              }`}
-              type="text"
-              placeholder="+ 38 (097) 12 34 567"
-              {...register("phone", {
-                required: "Phone is required",
-                pattern: {
-                  value: phonePattern,
-                  message: "Invalid phone number format",
-                },
-              })}
-            />
-            {errors.phone && (
-              <p className="text-red-500 text-xs italic">
-                {errors.phone.message as ReactNode}
+              <p className="text-red-500 text-xs italic text-right">
+                X Invalid email
               </p>
             )}
           </div>
@@ -108,27 +70,9 @@ export const CareerForm = () => {
               className="h-[196px] resize-none bg-form-input w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             />
             {errors.message && (
-              <p className="text-red-500 text-xs italic">Message required</p>
+              <p className="text-red-500 text-xs italic text-right">Message required</p>
             )}
           </div>
-
-          <div className="mb-4">
-            <label className="block text-sm ">
-              <input
-                type="checkbox"
-                {...register("agreement", {
-                  required: "You must accept the agreement",
-                })}
-              />{" "}
-              I confirm my consent to the processing of personal data.
-            </label>
-            {errors.agreement && (
-              <p className="text-red-500 text-xs italic">
-                You must confirm the consent
-              </p>
-            )}
-          </div>
-
           <button
             type="submit"
             className=" text-white text-center uppercase text-3xl font-medium leading-[normal] focus:outline-none focus:shadow-outline block ml-auto"
@@ -140,4 +84,4 @@ export const CareerForm = () => {
     </form>
   );
 };
-export default CareerForm;
+export default ContactsForm;
