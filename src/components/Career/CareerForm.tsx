@@ -1,4 +1,5 @@
 "use client";
+import { ReactNode } from "react";
 import { useForm } from "react-hook-form";
 
 export const CareerForm = () => {
