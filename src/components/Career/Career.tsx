@@ -50,7 +50,7 @@ const Career: FC = () => {
           <div className="col-span-3 md:col-span-2 md:mr-[24px]">
             <div className="grid grid-cols-3 md:grid-cols-4">
               <p className="col-span-2 col-start-2 md:col-span-2">
-                Don't miss your opportunity! Fill out the form right now and join
+                Don&#8242;t miss your opportunity! Fill out the form right now and join
                 our team!
               </p>
               <CareerForm />
