@@ -10,7 +10,7 @@ import { gallery } from '@/jsonData/gallery';
 
 const Gallery: FC = () => {
   return (
-    <section id="career" className="career-section">
+    <section id="gallery" className="gallery-section">
       <div className="padding-x max-width">
         <div className="padding-y ">
           <h2 className="header-2 mb-6">

@@ -6,10 +6,10 @@ const Career: FC = () => {
     <section id="career" className="career-section">
       <div className="padding-x max-width">
         <div className="padding-y grid grid-cols-3">
-          <h2 className="header-2 col-span-3  md:col-span-2 mb-6">
+          <h2 className="header-2 col-span-3  md:col-span-2 mb-6 ">
             Choose <span className="font-medium">us</span>
           </h2>
-          <p className="text-justify min-w-[179px] col-span-2 col-start-2 md:col-start-3 md:row-start-1 md:col-span-1 md:max-w-[293px]">
+          <p className="text-justify min-w-[179px] col-span-2 col-start-2 md:col-start-3 md:row-start-1 md:col-span-1 md:max-w-[293px] md:content-center">
             Your chance to join our passionate team in Carpathian tourism.
             Seeking talented professionals to share our common mission.
           </p>

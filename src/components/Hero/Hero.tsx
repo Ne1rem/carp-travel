@@ -28,7 +28,7 @@ const Hero: FC = () => {
                 the Carpathians. Enjoy stunning views, exciting expeditions, and
                 the best service!
               </p>
-              <Link href="contacts" className="button-hero">
+              <Link href="#contacts" className="button-hero">
                 JOIN NOW
               </Link>
             </div>

@@ -13,6 +13,13 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
+.scroll-lock {
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 @media screen and (min-width: 768px) {
   body {
@@ -305,6 +312,24 @@ body {
       url(/images/background-footer@2x.webp) type('image/webp') 2x,
       url(/images/background-footer-mob.jpg) 1x,
       url(/images/background-footer@2x.jpg) 2x
+    );
+  background-repeat: no-repeat;
+  background-size: auto 287px, cover, cover;
+}
+
+
+.gallery-section {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 24, 38, 0.75),
+      rgba(0, 37, 49, 0) 100%
+    ),
+    linear-gradient(rgba(2, 15, 8, 0.5), rgba(2, 15, 8, 0.5)),
+    image-set(
+      url(/images/background-gallary-mob.webp) type('image/webp') 1x,
+      url(/images/background-gallary2x.webp) type('image/webp') 2x,
+      url(/images/background-gallary-mob.jpg) 1x,
+      url(/images/background-gallary2x.jpg) 2x
     );
   background-repeat: no-repeat;
   background-size: auto 287px, cover, cover;
