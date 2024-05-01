@@ -26,11 +26,8 @@ export const ContactsForm = () => {
               Full name
             </label>
             <input
-              className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
-                errors.fullName ? "border-red-500" : "border-transparent"
-              }`}
               type="text"
-              id="fullName"
+              id="fullNameInput"
               placeholder="John Smith"
               {...register("fullName", {
                 required: "Full Name is required",
@@ -51,7 +48,7 @@ export const ContactsForm = () => {
                 errors.email ? "border-red-500" : "border-transparent"
               }`}
               type="text"
-              id="email"
+              id="emailInput"
               placeholder="johnsmith@email.com"
               {...register("email", {
                 required: "Email is required",
@@ -74,7 +71,7 @@ export const ContactsForm = () => {
               Message
             </label>
             <textarea
-            id="message"
+              id="messageInput"
               {...register("message", { required: "Message is required" })}
               className="h-[196px] resize-none bg-form-input w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             />
