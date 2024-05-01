@@ -15,8 +15,8 @@ const Contacts: FC = () => {
         <div className="flex col-start-1 col-span-3 justify-end pb-6 md:col-span-2  md:col-start-1 md:col-end-3 md:row-start-2 md:row-end-3
         xl:md:col-start-1 xl:col-end-2 xl:row-start-2 xl:row-end-3 xl:justify-center">
           <div className="flex col-span-2 col-start-1 flex-col header-5">
-            <a href="tel:+38 (098) 12 34 567">+38 (098) 12 34 567</a>
-            <a href="tel:+38 (073) 12 34 567">+38 (073) 12 34 567</a>
+            <a href="tel:+380981234567">+38 (098) 12 34 567</a>
+            <a href="tel:+380731234567">+38 (073) 12 34 567</a>
           </div>
           <p className="col-span-1 py-0 pl-5">Phone number</p>
         </div>
