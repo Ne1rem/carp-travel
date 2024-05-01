@@ -16,6 +16,10 @@ body {
 .scroll-lock {
   overflow: hidden;
 }
+    
+a,button {
+  cursor: pointer;
+}
 
 html {
   scroll-behavior: smooth;

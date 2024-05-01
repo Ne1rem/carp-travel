@@ -22,6 +22,7 @@ const InsideSlider: FC<SliderProps> = ({setInstanceSwiper}) => {
       {slides.map((item) => (
         <SwiperSlide key={item.title} className="no-swipe">
           <Image
+          priority={true}
             src={item.picture}
             alt={item.title}
             fill

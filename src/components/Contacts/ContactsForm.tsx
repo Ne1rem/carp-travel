@@ -10,6 +10,7 @@ export const ContactsForm = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
+    localStorage.setItem("contactsFormData", JSON.stringify(data));
   };
 
   return (
@@ -26,6 +27,9 @@ export const ContactsForm = () => {
               Full name
             </label>
             <input
+              className={`placeholder:opacity-20 bg-form-input border border-form-input w-full py-2 px-3 focus:outline-none focus:shadow-outline ${
+                errors.fullName ? "border-red-500" : "border-transparent"
+              }`}
               type="text"
               id="fullNameInput"
               placeholder="John Smith"

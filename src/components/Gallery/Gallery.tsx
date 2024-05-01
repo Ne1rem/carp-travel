@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {FC} from 'react';
-import {EffectCoverflow, Navigation} from 'swiper/modules';
-import Image from 'next/image';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import { gallery } from '@/jsonData/gallery';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FC } from "react";
+import { EffectCoverflow, Navigation } from "swiper/modules";
+import Image from "next/image";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import { gallery } from "@/jsonData/gallery";
 
 const Gallery: FC = () => {
   return (
@@ -32,14 +32,16 @@ const Gallery: FC = () => {
               slideShadows: false,
             }}
             navigation={{
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next',
+              prevEl: ".swiper-button-prev",
+              nextEl: ".swiper-button-next",
             }}
-            className="w-full h-[213px] sm:h-[370px] xl:h-[429px] mb-[12px] md:mb-0">
-            {gallery    .map((item) => (
+            className="w-full h-[213px] sm:h-[370px] xl:h-[429px] mb-[12px] md:mb-0"
+          >
+            {gallery.map((item) => (
               <SwiperSlide key={item.title}>
                 <div className="swiper-slide-inner">
                   <Image
+                    priority={true}
                     src={item.picture}
                     alt={item.title}
                     fill
@@ -50,8 +52,12 @@ const Gallery: FC = () => {
             ))}
           </Swiper>
           <div className="navigation-slider flex flex-between uppercase">
-            <div className="swiper-button-prev">Back</div>
-            <div className="swiper-button-next">Next</div>
+            <button type="button" className="swiper-button-prev ">
+              Back
+            </button>
+            <button type="button" className="swiper-button-next ">
+              Next
+            </button>
           </div>
         </div>
       </div>

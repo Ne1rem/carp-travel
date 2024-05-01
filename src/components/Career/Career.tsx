@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { CareerForm } from "./CareerForm";
+import { careerText } from "@/jsonData/career";
 
 const Career: FC = () => {
   return (
@@ -7,51 +8,44 @@ const Career: FC = () => {
       <div className="padding-x max-width">
         <div className="padding-y grid grid-cols-3">
           <h2 className="header-2 col-span-3  md:col-span-2 mb-6 ">
-            Choose <span className="font-medium">us</span>
+            {careerText.title} <span className="font-medium">{careerText.subtitle}</span>
           </h2>
           <p className="text-justify min-w-[179px] col-span-2 col-start-2 md:col-start-3 md:row-start-1 md:col-span-1 md:max-w-[293px] md:content-center">
-            Your chance to join our passionate team in Carpathian tourism.
-            Seeking talented professionals to share our common mission.
+            {careerText.opportunity}
           </p>
           <h3 className="my-9 text-3xl font-extralight leading-[normal] uppercase col-span-1 col-start-2 md:col-span-1 md:col-start-1 md:mt-[12px] md:mb-[56px] md:text-center">
             Why us?
           </h3>
           <ul className="col-span-2 flex flex-col text-right gap-4 md:gap-6 mb-[112px] md:col-span-1 md:col-start-1 md: mr-[20px]">
             <li>
-              <h4 className="header-4 mb-[8px]">Professional development</h4>
+              <h4 className="header-4 mb-[8px]">{careerText.reason1}</h4>
               <p className="about-us">
-                We offer growth opportunities and a creative environment to
-                nurture your talents.
+              {careerText.textReason1}
               </p>
             </li>
             <li>
-              <h4 className="header-4 mb-[8px]">Teamwork</h4>
+              <h4 className="header-4 mb-[8px]">{careerText.reason2}</h4>
               <p className="about-us">
-                Join our close-knit family, where support and inspiration
-                abound.
+              {careerText.textReason2}
               </p>
             </li>
             <li>
-              <h4 className="header-4 mb-[8px]">
-                Stimulating work environment
-              </h4>
+              <h4 className="header-4 mb-[8px]">{careerText.reason3}</h4>
               <p className="about-us">
-                Flexibility and remote options for a comfortable experience.
+              {careerText.textReason3}
               </p>
             </li>
             <li>
-              <h4 className="header-4 mb-[8px]">Exciting challenges</h4>
+              <h4 className="header-4 mb-[8px]">{careerText.reason4}</h4>
               <p className="about-us">
-                Unleash your potential through unforgettable projects showcasing
-                Carpathian beauty.
+              {careerText.textReason4}
               </p>
             </li>
           </ul>
           <div className="col-span-3 md:col-span-2 md:mr-[24px]">
             <div className="grid grid-cols-3 md:grid-cols-4">
               <p className="col-span-2 col-start-2 md:col-span-2">
-                Don&#8242;t miss your opportunity! Fill out the form right now and join
-                our team!
+                {careerText.opportunity}
               </p>
               <CareerForm />
             </div>

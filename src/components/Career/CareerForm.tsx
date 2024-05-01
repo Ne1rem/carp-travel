@@ -11,6 +11,7 @@ export const CareerForm = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
+    localStorage.setItem("careerFormData", JSON.stringify(data));
   };
 
   const phonePattern = /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$)/;
@@ -125,12 +126,13 @@ export const CareerForm = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm ">
+            <label className="block text-sm cursor-pointer">
               <input
                 type="checkbox"
                 {...register("agreement", {
                   required: "You must accept the agreement",
                 })}
+              
               />{" "}
               I confirm my consent to the processing of personal data.
             </label>
