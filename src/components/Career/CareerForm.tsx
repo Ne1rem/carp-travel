@@ -1,4 +1,5 @@
 "use client";
+import Notiflix from "notiflix";
 import { ReactNode } from "react";
 import { useForm } from "react-hook-form";
 
@@ -7,11 +8,14 @@ export const CareerForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const onSubmit = (data: any) => {
     console.log(data);
     localStorage.setItem("careerFormData", JSON.stringify(data));
+    Notiflix.Notify.success('Form submitted successfully');
+    reset()
   };
 
   const phonePattern = /(?=.*\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$)/;

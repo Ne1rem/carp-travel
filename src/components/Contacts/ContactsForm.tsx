@@ -1,4 +1,5 @@
 "use client";
+import Notiflix from "notiflix";
 import { useForm } from "react-hook-form";
 
 export const ContactsForm = () => {
@@ -6,11 +7,14 @@ export const ContactsForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   const onSubmit = (data: any) => {
     console.log(data);
     localStorage.setItem("contactsFormData", JSON.stringify(data));
+    Notiflix.Notify.success('Form submitted successfully');
+    reset()
   };
 
   return (
